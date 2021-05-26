@@ -1,17 +1,9 @@
-# temp_0525_1
+# Flutter 教程 Key
 
-A new Flutter project.
+在BillBill上面看到不錯的教程, 照著學習一下.
 
-## Getting Started
+## 影片來源
 
-This project is a starting point for a Flutter application.
+https://www.bilibili.com/video/BV1b54y1z7iD
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Fluuter_key
+作者：王叔不秃
