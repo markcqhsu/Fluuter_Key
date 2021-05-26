@@ -45,8 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Box(Colors.orange),
-            Box(Colors.blue),
+            //因為給予Box Widget key值, Flutter才有辦法分辨
+            //ValueKey() 裡面不一定是數字, 也可以是字串
+            Box(Colors.orange, ValueKey(2)),
+            Box(Colors.orange, ValueKey(1)),
+            Box(Colors.orange, ValueKey(3)),
+
           ],
         ),
       ),
@@ -59,26 +63,39 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class Box extends StatelessWidget{
-  final Color color;
+//自己建立Box Widget
+class Box extends StatefulWidget{
+  final Color color; //讓自己做的Widget可以輸入變數
 
+  //為自己的Widget建立Key, 把值傳到父類, 父類都有支援Key
+  //用命名參數的方式轉給父類
 
-  Box(this.color);
+  Box(this.color, Key key) : super(key: key);
+
+  @override
+  _BoxState createState() => _BoxState();
+}
+
+class _BoxState extends State<Box> {
+  int _count = 0;
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 100,
       height: 100,
-      color: color,
+      color: widget.color,
       child: Center(
-        child: Text(
-          "hi",
-          style: TextStyle(fontSize: 50),
+        child: ElevatedButton(
+          onPressed: ()=> setState(() => _count++),
+          child: Text(
+            "$_count",
+            style: TextStyle(fontSize: 50),
+          ),
         ),
       ),
     );
   }
-  
 }
 
